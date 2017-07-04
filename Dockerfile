@@ -50,6 +50,7 @@ RUN curl -o /usr/bin/docker -sL -f https://get.docker.com/builds/Linux/x86_64/do
     chmod +x /usr/bin/docker
 
 # Cache binaries
+RUN mkdir -p ${DAPPER_SOURCE}/resources/content/
 COPY ./resources/content/cattle-global.properties ${DAPPER_SOURCE}/resources/content/
 RUN bash -x cattle-binary-pull
 
